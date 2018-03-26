@@ -11,12 +11,11 @@
 |
 */
 Route::group(['prefix'=>'Front'],function (){
-
+    Route::get('/','FrontController@index')->name('home');
+    Route::get('/shirts','Front\FrontController@shirts')->name('shirts');
+    Route::get('/shirt','Front\FrontController@shirt')->name('shirt');
 });
 
-Route::get('/','Front\FrontController@index')->name('home');
-Route::get('/shirts','Front\FrontController@shirts')->name('shirts');
-Route::get('/shirt','Front\FrontController@shirt')->name('shirt');
 
 Auth::routes();
 

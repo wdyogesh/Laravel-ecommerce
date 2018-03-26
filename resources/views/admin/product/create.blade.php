@@ -16,6 +16,12 @@
                 {{form::label('size','Size')}}
                 {{form::select('size' , ['small' => 'Small', 'medium' => 'Medium' , 'large' => 'Large'], '' ,['class'=>'form-control','placeholder'=>'Select Size'])}}
             </div>
+            
+            <div class="form-group">
+                {!! Form::label('price', 'Price:') !!}
+                {!! Form::text('price', null, ['class' => 'form-control', 'placeholder'=>'Please Enter Price']) !!}
+            </div>
+            
             <div class="form-group">
                 {{form::label('category_id','Category')}}
                 {{form::select('category_id' , $categories , '' ,['class'=>'form-control','placeholder'=>'Select Category'])}}
