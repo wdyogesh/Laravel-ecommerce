@@ -1,0 +1,54 @@
+DB Name: ffxycxcvmm
+UserName: ffxycxcvmm
+password : 4H4Fays7qs
+
+
+
+// how to add price in table row.
+php artisan make:migration add_price_to_products_table --table=products
+
+
+// now add the column as you want to add in table in up method
+$table->string('price')->after('size');
+
+// and down method add
+
+$table->dropColumn('price')
+
+// after adding migrate
+
+// how to use chunk in view
+
+	 @forelse ($shirts->chunk(4) as $chunk)
+                @foreach ($chunk as $shirt)
+                 <div class="small-3 columns">
+                    <div class="item-wrapper">
+                        <div class="img-wrapper">
+                            <a class="button expanded add-to-cart">
+                                Add to Cart
+                            </a>
+                            <a href="{{route('shirt')}}">
+                                <img src="{{ url('images',$shirt->image) }}"/>
+                            </a>
+                        </div>
+                        <a href="{{route('shirt')}}">
+                            <h3>
+                                {{$shirt->name}}
+                            </h3>
+                        </a>
+                        <h5>
+                            $ {{$shirt->price}}
+                        </h5>
+                        <p>
+                            {{$shirt->discription}}
+                        </p>
+                    </div>
+                </div>
+                @endforeach
+            @empty
+                <h3>There is no shirts.</h3>
+     @endforelse
+
+
+/////////////////////////at last add this package into laravel shoping cart ===========================
+https://github.com/Crinsane/LaravelShoppingcart
