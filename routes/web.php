@@ -23,6 +23,8 @@ Route::get('/logout', 'Auth\loginController@logout')->name('logout');
 
 Route::get('/admin', 'HomeController@index')->name('admin');
 //admin route group
+Route::resource('cart','CartController');
+
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function (){
     Route::get('/', function (){
         return view('admin.index');

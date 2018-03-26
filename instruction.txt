@@ -52,3 +52,48 @@ $table->dropColumn('price')
 
 /////////////////////////at last add this package into laravel shoping cart ===========================
 https://github.com/Crinsane/LaravelShoppingcart
+
+
+======================== add admin ===============================================================
+
+php artisan make:migration add_admin_column_to_users --table=users
+
+//in aap method in app method
+
+$table->tinyInteger('admin')->nullable();
+//Drop Table
+$table->dropColumn('admin');
+
+
+
+
+======================middleware make ========================================================
+
+php artisan make:middleware Admin
+
+
+
+
+===============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
